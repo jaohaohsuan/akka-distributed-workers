@@ -1,0 +1,25 @@
+b1:
+  image: jaohaohsuan/adw-master-worker:0.1
+  command: --backend 2551 --leveldb
+b2:
+  image: jaohaohsuan/adw-master-worker:0.1
+  links:
+   - b1
+  command: --backend 2552 --seedNodes b1:2551
+worker:
+  image: jaohaohsuan/adw-master-worker:0.1
+  links:
+   - b1
+   - b2
+  command: --contactPoints b1:2551,b2:2552
+web:
+  image: jaohaohsuan/adw-frontend:0.1
+  links:
+   - b1
+   - b2
+  command: --port 7879 --seedNodes b1:2551,b2:2552
+  ports:
+   - "8080:7879"
+
+
+          
