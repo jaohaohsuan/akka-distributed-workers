@@ -1,5 +1,6 @@
 Typesafe Activator template for distributed workers with Akka Cluster.
-词范例借用了typesafe的分布式worker范例进行了改造
+
+借用了typesafe的分布式worker template进行了改造
 
 使用scopt增强了run启动的可配置化
 
