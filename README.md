@@ -13,28 +13,3 @@ POST http://127.0.0.1/job
 利用circle ci直接发布到docker hub
 
 包含docker-composer范例
-
-以下为常用操作
-> sbt
-> projects
-可看到root与frontend
-> project root
-切换到root
-> project frontend
-切换到frontend
-
-打包或发布
-> project root
-> docker:publishLocal
-建立本机docker image
-> docker:publish
-发布到docker hub
-> stage
-到target/universal/stage/bin 可在本地运行无需通过sbt
-
-docker composer范例
-> docker-compose up -d
-> docker-compose ps
-> docker-compose log
-> docker-compose stop
-> docker-compose rm -v -f
