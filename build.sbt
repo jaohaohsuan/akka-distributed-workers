@@ -48,12 +48,14 @@ val frontend = runableProject("frontend", file("frontend")).dependsOn(root).sett
       name := "frontend",
       version := "0.1",
       packageName in Docker := "adw-frontend",
+      resolvers += "hseeberger at bintray" at "http://dl.bintray.com/hseeberger/maven",
       libraryDependencies ++= Seq(
         "com.typesafe.akka"     %% "akka-stream-experimental"    % akkaExperimentalVersion,
         "com.typesafe.akka"     %% "akka-http-core-experimental" % akkaExperimentalVersion,
         "com.typesafe.akka"     %% "akka-http-experimental"      % akkaExperimentalVersion,
         "com.typesafe.akka"     %% "akka-http-xml-experimental"  % akkaExperimentalVersion,
         "com.typesafe.akka"     %% "akka-cluster-metrics"        % akkaVersion,
+        "de.heikoseeberger" %% "akka-http-upickle" % "1.3.0",
         "com.github.romix.akka" %% "akka-kryo-serialization"     % "0.4.0",
         "com.typesafe.akka"     %% "akka-cluster"                % akkaVersion,
         "com.typesafe.akka"     %% "akka-cluster-tools"          % akkaVersion

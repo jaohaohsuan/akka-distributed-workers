@@ -34,8 +34,8 @@ object Main extends App {
       system.actorOf(Props[WorkResultConsumer], "consumer")
 
       val bindingFuture = Http().bindAndHandle(route, "0.0.0.0", c.port)
+
       sys.addShutdownHook(system.terminate())
     }
-
   }
 }

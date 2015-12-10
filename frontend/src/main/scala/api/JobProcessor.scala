@@ -25,7 +25,7 @@ trait JobProcessor {
 
   def nextWorkId(): String = UUID.randomUUID().toString
 
-  def sentJob(n: Int) = {
+  def sentJob(n: Any) = {
     implicit val timeout = Timeout(5.seconds)
     val work = Work(nextWorkId(), n)
     (masterProxy ? work) map {
