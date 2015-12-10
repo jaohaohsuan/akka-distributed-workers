@@ -15,6 +15,9 @@ dependencies:
     - echo "java $SBT_OPTS -jar \`dirname \$0\`/sbt-launch.jar \"\$@\"" > $HOME/bin/sbt
     - chmod u+x $HOME/bin/sbt
     - which sbt
+  cache_directories:
+    - "~/.ivy2"
+    - "~/.sbt"
   override:
     - docker info
 
